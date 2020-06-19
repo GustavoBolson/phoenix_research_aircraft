@@ -1,0 +1,115 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage[defaultsans]{comfortaa}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+
+\usepackage{pgfgantt}
+
+
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+%\usepackage[T1]{fontenc}
+%\renewcommand*\familydefault{\sfdefault}
+
+%\usepackage{sansmathfonts}
+%\usepackage[T1]{fontenc}
+%\renewcommand*\familydefault{\sfdefault}
+
+%\usepackage[default,osfigures,scale=0.95]{opensans}
+%\usepackage[T1]{fontenc}
+
+\title{\Large{\textbf{Proposta de Projeto: Análise de Longarina em Estrutura de Asa para o Avião de Pesquisa Phoenix P2}}}
+\author{Gustavo Mancuso Bolson}%S & & \textit{17 de Abril, 2020}}
+%\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+
+O projeto proposto é parte integrante de um esforço multidisciplinar de capacitar e desenvolver conhecimentos que permitam um maior experiência na área de atuação aeroespacial durante a graduação, através do design, construção, realização de ensaios e voos-teste de um avião não-tripulado de características facilmente modificáveis, nomeado a seguir de Projeto Phoenix. Para a segunda iteração do projeto denominada Phoenix P2, tal como especificado na descrição de requisitos abaixo, será construída uma asa com componentes de estrutura interna separados dos componentes aerodinâmicos, sendo que o objetivo deste estudo pode ser dividido em três subobjetivos principais:
+
+\begin{itemize}
+    \item Considerando o tubo longitudinal que forma a longarina, o quão espeça deve ser parede do tubo considerando o carregamento esperado;
+    \item Dados os possíveis materiais a serem utilizados na construção desta estrutura, quais os diâmetros de barras que seriam necessários para cada material;
+    \item Em resultado da análise, é possível atingir todos os requisitos de design especificados com esta configuração de estrutura;
+\end{itemize}
+
+Sendo estes 3 objetivos extensamente (porém não exaustivamente) discutidos, o resultado deve ser anexado à \textit{Critical Design Review} da iteração, com data esperada para Q3 de 2020.
+
+\section{Especificações do Design da Asa}
+
+Segundo a seção de interesse da \textit{Preliminary Design Review} para a Phoenix P2, a seguinte cadeia de requisitos deve ser atendida para garantir uma integração no processo de engenharia de sistemas:
+
+\begin{itemize}
+    \item[1] A aeronave deve ter uma estrutura capaz de voar.
+    \item[1.2] A estrutura deve conter asas com capacidade de gerar sustentação total dentro do envelope de voo.
+    \item[1.2.1] A asa deve conter uma estrutura interna responsável por transmitir todos os esforços ao acoplamento de ajuste.
+    \item[1.2.2] A asa deve conter um envólucro funcionando de superfície aerodinâmica que transmite seus esforços para as nervuras.
+    \item[1.2.3] A asa deve conter nervuras com o perfil do aerofólio para sustentar o envólucro.
+    \item[1.2.4] A asa e todas suas estruturas associadas combinadas devem ter massa inferior a 0.80kg.
+\end{itemize}
+
+\newpage
+
+Este requisitos analisados juntamente com o conjunto total de requisitos levou a definição preliminar do design a seguir mostrado nas imagens seguintes. Para motivos de visualização da figura 1, as partes consideradas principalmente estruturais estão marcadas de vermelho, enquanto o envólucro é marcado de esmeralda. Para motivos desta análise, consideraremos que as nervuras serão feitas de isopor de alta densidade, e que o envolucro não está engastado em nenhum ponto a não ser em suas bordas. Todas as medidas das duas figuras estão em termos de milímetros.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{White1.png}
+    \caption{\label{fig:1}}
+\end{figure}
+
+A seção transversal da asa, que mantém-se constante durante todo o comprimento, está indicada abaixo com suas dimensões correspondentes. Segundo o design preliminar, foi utilizado um aerofólio NACA 23015 por seu bom desempenho em baixos números de Reynolds e linearidade de coeficientes de sustentação com a variação dos mesmos, simplificado a análise posterior e uma implementação de sistema de controle também posterior. É importante notar que a longarina está posicionada nesta posição da corda do aerofólio para tentar reduzir em regimes de voo diversos a necessidade de transmitir momento torsor, apesar de ainda oferecer resistência ao mesmo dada sua geometria.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{White2.png}
+    \caption{\label{fig:2}}
+\end{figure}
+
+\section{Características da Análise Planejada}
+
+Com o objetivo de simplificar a análise da estrutura, algumas reduções ao modelo são esperadas. A primeira destas é a suposição de que o envólucro aerodinâmico terá massa dispersível com relação ao resto da estrutura, e que este não estará engastado às nervuras, sendo assim desconsiderado para esta análise. O perfil de sustentação assumida não varia conforme a posição longitudinal, sendo assim desconsiderados efeitos de ponta de asa e assumindo assim as curvas de forças bidimensionais do aerofólio, a não ser que a ferramenta de análise possua uma forma simplificada de integração desta característica à análise.
+
+Para análise da longarina, assumiremos que o material escolhido é uniforme e ideal de acordo com tabelas que serão referenciadas ao final. O critério preliminar para a rejeição da configuração simulada será uma diferença de angulo entre as duas extremidades maior do que 20 graus ou a ruptura do material em qualquer dos pontos da longarina.
+
+Os esforços exercidos sobre a superfície aerodinâmica serão determinados de acordo com o cronograma e disponibilidade de ferramentas ou simplificações de cargas em função do envelope de voo.
+
+\section{Cronograma}
+
+O seguinte cronograma apresenta atividades a serem realizadas em nível de abstração relativamente elevado, porém incluem todas as tarefas necessárias para a realização completa de todas as atividades ligadas à análise aqui apresentada. Os itens abaixo indicam períodos como sendo semanas. Nestes períodos, estão reservados para tarefas exclusivas ao projeto Phoenix P2 8 horas por período, às quais podem sofrer variações que não ultrapassem o macro-limite semanal.
+
+\begin{enumerate}
+    \item Para a primeira semana, as tarefas são pesquisa adicional sobre estruturas de asa, decisão do software de simulação e cálculo a ser utilizado, fazer ajustes finais na concepção da análise associadas a confirmação pelo professor, determinação de esforços externos e adaptação dos desenhos para o software escolhido;
+    \item Na segunda semana, as primeiras simulações necessárias serão executadas e seus resultados serão analisados, as primeiras imagens para descrição dos esforços serão criados;
+    \item Na terceira semana, simulações e análises finais, Preparação do documento escrito para ser entregue associado à apresentação, entrega preliminar do documento para checagem do professor.
+    \item Por fim, na quarta semana, finalização do documento escrito e distribuição prévia à apresentação, preparação e finalização dos slides, apresentação final e \textit{debriefing}.
+\end{enumerate}
+
+Qualquer desvio que se estender além do macro-limite semanal exigirá uma reorganização do cronograma, o que será informado ao professor para garantir a entrega dentro da qualidade esperada e prazo final definido.
+
+
+\begin{ganttchart}{1}{24}
+
+%\gantttitle{Cronograma Planejado}{24} \\
+\gantttitlelist{"Week 1", "Week 2", "Week 3", "Week 4"}{6} \\
+\ganttgroup{Group 1}{1}{24} \\
+\ganttbar{Pesquisa}{1}{2} \\
+\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+\ganttmilestone{Milestone}{7} \ganttnewline
+\ganttbar{Final Task}{8}{24}
+\ganttlink{elem2}{elem3}
+\ganttlink{elem3}{elem4}
+\end{ganttchart}
+
+
+
+
+\end{document}
